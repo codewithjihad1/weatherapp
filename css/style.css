@@ -1,0 +1,230 @@
+/* Import google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
+
+/* Decliring a variables */
+:root {
+    --primaryColor: #4CB6F2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--primaryColor);
+}
+
+.container {
+    max-width: 350px;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    background: #fff;
+}
+
+.user-input {
+    display: block;
+}
+
+.container .title {
+    border-bottom: 1px solid #ddd;
+}
+
+.container .title h2 {
+    padding: 0 20px 10px;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--primaryColor);
+}
+
+.title h2 i {
+    cursor: pointer;
+    display: none;
+}
+
+.title h2 i.active {
+    display: inline-block;
+}
+
+.user-input .input-address {
+    padding: 15px 20px 20px;
+}
+
+.user-input .input-address .info-text {
+    display: none;
+    font-size: 1.1em;
+    text-align: center;
+    padding: 7px 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.user-input .input-address input {
+    width: 100%;
+    padding: 7px 12px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1.15em;
+    border-radius: 5px;
+    color: var(--primaryColor);
+    text-align: center;
+}
+
+.input-address input:is(:focus, :valid) {
+    border: 2px solid var(--primaryColor);
+}
+
+.separetors {
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    position: relative;
+}
+
+.separetors::before {
+    content: "or";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 10px;
+    background: #fff;
+    color: #ccc;
+    margin-top: -2px;
+}
+
+.location-btn {
+    padding: 20px;
+}
+
+.user-input .location-btn button {
+    padding: 7px 12px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    background: var(--primaryColor);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.weather-details {
+    display: none;
+    margin: 30px 0 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.weather-details img {
+    max-width: 125px;
+}
+
+.weather-details .temp {
+    display: flex;
+    font-weight: 500;
+    font-size: 72px;
+}
+
+.weather-details .temp .numb {
+    font-weight: 600;
+}
+
+.weather-details .temp .deg {
+    font-size: 40px;
+    display: block;
+    margin: 10px 5px 0 0;
+}
+
+.weather-details .weather {
+    font-size: 21px;
+    text-align: center;
+    margin: -5px 20px 15px;
+}
+
+.weather-details .location {
+    display: flex;
+    font-size: 19px;
+    padding: 0 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.location i {
+    font-size: 22px;
+    margin: 4px 5px 0 0;
+}
+
+.weather-details .bottom-details {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+}
+
+.bottom-details .column {
+    display: flex;
+    width: 100%;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.column i {
+    color: #5DBBFF;
+    font-size: 40px;
+}
+
+.column.humidity {
+    border-left: 1px solid #ccc;
+}
+
+.column .details {
+    margin-left: 3px;
+}
+
+.details .temp,
+.humidity span {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -3px;
+}
+
+.details .temp .deg {
+    margin: 0;
+    font-size: 17px;
+    padding: 0 2px 0 1px;
+}
+
+.column .details p {
+    font-size: 14px;
+    margin-top: -6px;
+}
+
+.humidity i {
+    font-size: 37px;
+}
+
+.pandding-info {
+    display: block !important;
+    background: #007200d9;
+}
+
+.error-message {
+    display: block !important;
+    background: #5c0000bd;
+}
