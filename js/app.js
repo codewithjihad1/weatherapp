@@ -9,7 +9,8 @@ weather = weatherDeatil.querySelector(".weather"),
 loca = weatherDeatil.querySelector(".location span"),
 feelsLike = weatherDeatil.querySelector(".numb-2"),
 humidity = weatherDeatil.querySelector(".numb-3"),
-backBtn = document.querySelector(".title h2 i");
+backBtn = document.querySelector(".title h2 i"),
+wIcon = document.getElementById("wIcon");
 let api;
 
 
@@ -46,12 +47,24 @@ function requestApi(city) {
 
 // Weather details show function declaration
 function weatherDeatils(info) {
+    let id = info.weather[0].id;
     if(info.message) {
         infoText.innerText = info.message;
         infoText.classList.add('error-message');
     }else {
         userInput.style.display = 'none';
         weatherDeatil.style.display = 'flex';
+        if(id == 800) {
+            wIcon.src = "img/clear.svg";
+        }else if(id >= 200 && id <= 232) {
+            wIcon.src = "img/storm.svg";
+        }else if(id >= 600 && id <= 622) {
+            wIcon.src = "img/snow.svg";
+        }else if(id >= 700 && id <= 781) {
+            wIcon.src = "img/haze.svg";
+        }else if((id >= 300 && id <= 321) || (id >= 500 && id <= 521)) {
+            wIcon.src = "img/rain.svg";
+        }
         temperature.innerText = parseInt(info.main.temp);
         weather.innerText = info.weather[0].description;
         loca.innerText = info.name;
